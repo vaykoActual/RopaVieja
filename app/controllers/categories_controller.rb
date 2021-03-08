@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-# GET /products
+# GET /categories
 def index
   @categories = Category.all
 

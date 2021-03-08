@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
     render json: @products
   end
+  
 
   # GET /products/1
   def show

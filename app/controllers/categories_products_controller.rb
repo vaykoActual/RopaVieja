@@ -5,7 +5,7 @@ class CategoriesProductsController < ApplicationController
 
     @product.categories << @category
     # -- OR --
-    # @flavors.products.push(@product)
+    # @categories.products.push(@product)
 
     render json: @product, include: :categories
   end
