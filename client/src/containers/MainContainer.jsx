@@ -44,7 +44,7 @@ export default function MainContainer(props) {
   const handleDelete = async (id) => {
     await destroyProduct(id);
     setProducts((prevState) =>
-      prevState.filter((products) => product.id !== id)
+      prevState.filter((product) => product.id !== id)
     );
   };
 

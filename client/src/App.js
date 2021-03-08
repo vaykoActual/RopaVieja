@@ -1,24 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+import { Switch, Route, useHistory } from "react-router-dom";
+
+import Layout from "./layouts/Layout";
+import Login from "./screens/Login";
+import {
+  loginUser,
+  registerUser,
+  verifyUser,
+  removeToken,
+} from "./services/auth";
+import Register from "./screens/Register";
+import MainContainer from "./containers/MainContainer";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [error, setError] = useState(null);
+  const history = useHistory();
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const currentUser = await verifyUser();
+      setCurrentUser(currentUser);
+    };
+    handleVerify();
+  }, []);
+
+  const handleLogin = async (formData) => {
+    try {
+      const currentUser = await loginUser(formData);
+      setCurrentUser(currentUser);
+      setError(null);
+      history.push("/");
+    } catch (e) {
+      setError("invalid login credentials");
+    }
+  };
+
+  const handleRegister = async (formData) => {
+    try {
+      const currentUser = await registerUser(formData);
+      setCurrentUser(currentUser);
+      history.push("/");
+    } catch (e) {
+      setError("invalid sign up info");
+    }
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem("authToken");
+    removeToken();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout currentUser={currentUser} handleLogout={handleLogout}>
+      <Switch>
+        <Route path="/login">
+          <Login handleLogin={handleLogin} error={error} />
+        </Route>
+        <Route path="/register">
+          <Register handleRegister={handleRegister} />
+        </Route>
+        <Route path="/">
+          <MainContainer currentUser={currentUser} />
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 
