@@ -22,6 +22,7 @@ export default function Layout(props) {
         {currentUser && (
           <>
             <Link to="/products">Products</Link>
+            <br></br>
             <Link to="/categories">Categories</Link>
             <hr />
           </>
