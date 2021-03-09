@@ -7,7 +7,7 @@ export default function ProductCreate(props) {
     brand: "",
     price: "",
   });
-  const { name, brand } = formData;
+  const { name, brand, price } = formData;
   const { handleCreate } = props;
 
   const handleChange = (e) => {
@@ -35,6 +35,7 @@ export default function ProductCreate(props) {
         <input
           type="text"
           brand="brand"
+          price="price"
           Value={brand}
           onChange={handleChange}
         />

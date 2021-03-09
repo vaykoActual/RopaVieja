@@ -6,7 +6,7 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props;
 
   return (
-    <div className="layout-container">
+    <div className="App">
       <header>
         <Link className="logo" to="/">
           <img className="logo" src={logo} alt="RopaVieja" />
@@ -17,13 +17,12 @@ export default function Layout(props) {
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <Link to="/login">SignIn/SignUp</Link>
+          <Link to="/login">Login/Register</Link>
         )}
         <hr />
         {currentUser && (
           <>
             <Link to="/products">Products</Link>
-            <br></br>
             <Link to="/categories">Categories</Link>
             <hr />
           </>
