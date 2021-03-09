@@ -21,9 +21,9 @@ puts "#{User.count} users created"
 
 puts "#{Category.count} categories created"
 
-Product.create!(name: 'hoodie', user: @ruby, categories: [@men, @women])
-@women.products.create!(name: 'shoes', user: @ruby)
-@sneakers = Product.create!(name: 'sneakers', user: @ruby)
+Product.create!(name: 'Hoodie', user: @ruby, categories: [@men, @women])
+@women.products.create!(name: 'Blue Suede Shoes', user: @ruby)
+@sneakers = Product.create!(name: 'Air Jordans', user: @ruby)
 @sneakers.categories.push(@men, @women, @kids)
 
 puts "#{Product.count} products created" 

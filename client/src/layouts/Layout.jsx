@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../services/logo.png";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
@@ -7,8 +8,8 @@ export default function Layout(props) {
   return (
     <div className="App">
       <header>
-        <Link to="/">
-          <h1>RopaVieja</h1>
+        <Link className="logo" to="/">
+          <img className="logo" src={logo} alt="RopaVieja" />
         </Link>
         {currentUser ? (
           <>
