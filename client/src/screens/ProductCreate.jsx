@@ -3,8 +3,11 @@ import { useState } from "react";
 export default function ProductCreate(props) {
   const [formData, setFormData] = useState({
     name: "",
+    description: "",
+    brand: "",
+    price: "",
   });
-  const { name } = formData;
+  const { name, brand } = formData;
   const { handleCreate } = props;
 
   const handleChange = (e) => {
@@ -27,6 +30,16 @@ export default function ProductCreate(props) {
         Name:
         <input type="text" name="name" value={name} onChange={handleChange} />
       </label>
+      <label>
+        Brand:
+        <input
+          type="text"
+          brand="brand"
+          Value={brand}
+          onChange={handleChange}
+        />
+      </label>
+
       <br />
       <button>Submit</button>
     </form>

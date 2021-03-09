@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../services/logo.png";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
 
   return (
-    <div className="App">
+    <div className="layout-container">
       <header>
-        <Link to="/">
-          <h1>RopaVieja</h1>
+        <Link className="logo" to="/">
+          <img className="logo" src={logo} alt="RopaVieja" />
         </Link>
         {currentUser ? (
           <>
@@ -16,7 +17,7 @@ export default function Layout(props) {
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
-          <Link to="/login">Login/Register</Link>
+          <Link to="/login">SignIn/SignUp</Link>
         )}
         <hr />
         {currentUser && (

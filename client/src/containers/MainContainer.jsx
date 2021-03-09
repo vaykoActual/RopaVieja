@@ -59,27 +59,29 @@ export default function MainContainer(props) {
   };
 
   return (
-    <Switch>
-      {!currentUser && <Redirect to="/" />}
-      <Route path="/products/new">
-        <ProductCreate handleCreate={handleCreate} />
-      </Route>
-      <Route path="/products/:id/edit">
-        <ProductEdit products={products} handleUpdate={handleUpdate} />
-      </Route>
-      <Route path="/products/:id">
-        <ProductDetail categories={categories} />
-      </Route>
-      <Route path="/products">
-        <Products
-          products={products}
-          currentUser={currentUser}
-          handleDelete={handleDelete}
-        />
-      </Route>
-      <Route path="/categories">
-        <Categories categories={categories} />
-      </Route>
-    </Switch>
+    <div className="nav-container">
+      <Switch>
+        {!currentUser && <Redirect to="/" />}
+        <Route path="/products/new">
+          <ProductCreate handleCreate={handleCreate} />
+        </Route>
+        <Route path="/products/:id/edit">
+          <ProductEdit products={products} handleUpdate={handleUpdate} />
+        </Route>
+        <Route path="/products/:id">
+          <ProductDetail categories={categories} />
+        </Route>
+        <Route path="/products">
+          <Products
+            products={products}
+            currentUser={currentUser}
+            handleDelete={handleDelete}
+          />
+        </Route>
+        <Route path="/categories">
+          <Categories categories={categories} />
+        </Route>
+      </Switch>
+    </div>
   );
 }

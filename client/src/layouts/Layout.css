@@ -1,0 +1,12 @@
+.layout-container {
+  display: grid;
+  position: fixed;
+  width: 100vw;
+  grid-template-columns: 50px 50px 2fr 150px 72px 52px 60px 63px 1fr 50px 0.8fr 50px 50px;
+  grid-template-rows: 65px;
+  background-color: #c3c3c31c;
+}
+
+.img {
+  color: red;
+}
