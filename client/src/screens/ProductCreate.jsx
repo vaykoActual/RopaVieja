@@ -35,14 +35,21 @@ export default function ProductCreate(props) {
         <input
           type="text"
           brand="brand"
-          price="price"
           Value={brand}
           onChange={handleChange}
         />
+        <label>
+          Price:
+          <input
+            type="text"
+            price="price"
+            Value={price}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <button>Submit</button>
       </label>
-
-      <br />
-      <button>Submit</button>
     </form>
   );
 }
