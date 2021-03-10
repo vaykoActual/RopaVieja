@@ -1,3 +1,45 @@
+// import React from "react";
+// // import './.css';
+// import { Link } from "react-router-dom";
+// import { Card } from "react-bootstrap";
+
+// export default function ShowProducts(props) {
+//   return (
+//     <>
+//       <div className="product-container">
+//         {props.products.map((rec) => (
+//           <Link to={`/products/${rec.id}`}>
+//             <Card
+//               style={{
+//                 backgroundColor: "transparent",
+//                 border: "2px solid rgb(40, 95, 114)",
+//               }}
+//               className="product-card justify-content-center align-items-center mx-4"
+//             >
+//               <div className="mx-5">
+//                 <Card.Title
+//                   className="product-title-home"
+//                   style={{ fontSize: "30px" }}
+//                 >
+//                   {rec.product_name}
+//                 </Card.Title>
+//               </div>
+//               <Card.Body>
+//                 <Card.Img
+//                   className="product-card-photo"
+//                   variant="top"
+//                   src={rec.upload_photo}
+//                   alt="product-photo"
+//                 />
+//               </Card.Body>
+//             </Card>
+//           </Link>
+//         ))}
+//       </div>
+//     </>
+//   );
+// }
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getOneProduct } from "../services/products";
@@ -30,7 +72,8 @@ export default function ProductDetail(props) {
 
   return (
     <div>
-      <h3>{productItem?.name}</h3>
+      <h2>Details</h2>
+      <h3>{productItem?.description}</h3>
       {productItem?.categories.map((category) => (
         <p key={category.id}>{category.name}</p>
       ))}
