@@ -5,7 +5,7 @@ export default function ProductEdit(props) {
   const [formData, setFormData] = useState({
     name: "",
   });
-  const { name } = formData;
+  const { name, description } = formData;
   const { products, handleUpdate } = props;
   const { id } = useParams();
 
@@ -14,6 +14,7 @@ export default function ProductEdit(props) {
       const productItem = products.find((product) => product.id === Number(id));
       setFormData({
         name: productItem.name,
+        brand: productItem.brand,
       });
     };
     if (products.length) {
@@ -40,6 +41,15 @@ export default function ProductEdit(props) {
       <label>
         Name:
         <input type="text" name="name" value={name} onChange={handleChange} />
+      </label>
+      <label>
+        Description:
+        <input
+          type="text"
+          name="description"
+          value={description}
+          onChange={handleChange}
+        />
       </label>
       <br />
       <button>Submit</button>
