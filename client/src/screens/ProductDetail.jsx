@@ -54,8 +54,11 @@ export default function ProductDetail(props) {
   useEffect(() => {
     const fetchProductItem = async () => {
       const productData = await getOneProduct(id);
+      console.log(productData);
       setProductItem(productData);
+      console.log(productData);
     };
+
     fetchProductItem();
   }, [id]);
 
@@ -73,10 +76,10 @@ export default function ProductDetail(props) {
   return (
     <div>
       <h2>Details</h2>
+      <h3>{productItem?.name}</h3>
+      <h3>{productItem?.brand}</h3>
       <h3>{productItem?.description}</h3>
-      {productItem?.categories.map((category) => (
-        <p key={category.id}>{category.name}</p>
-      ))}
+      <h3>{productItem?.price}</h3>
 
       <form onSubmit={handleSubmit}>
         <select defaultValue="default" onChange={handleChange}>
