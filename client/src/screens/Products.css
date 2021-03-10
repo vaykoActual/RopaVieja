@@ -1,12 +1,13 @@
-img {
+.grid {
   display: grid;
-  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* This is better for small screens, once min() is better supported */
+  /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
   grid-gap: 1rem;
-  /* margin: 72px auto 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;*/
+  /* This is the standardized property now, but has slightly less support */
+  /* gap: 1rem */
+}
+img {
   max-width: 350px;
+  max-height: 250px;
 }
