@@ -15,6 +15,9 @@ export default function ProductEdit(props) {
       setFormData({
         name: productItem.name,
         brand: productItem.brand,
+        description: productItem.description,
+        price: productItem.price,
+        imgURL: productItem.imgURL,
       });
     };
     if (products.length) {
@@ -57,7 +60,12 @@ export default function ProductEdit(props) {
       </label>
       <label>
         Price:
-        <input type="text" name="price" value={price} onChange={handleChange} />
+        <input
+          type="number"
+          name="price"
+          value={price}
+          onChange={handleChange}
+        />
       </label>
       <label>
         imgURL:
@@ -68,15 +76,6 @@ export default function ProductEdit(props) {
           onChange={handleChange}
         />
       </label>
-      {/* <label>
-        Category:
-        <input
-          type="text"
-          name="category"
-          value={category}
-          onChange={handleChange}
-        />
-      </label> */}
       <br />
       <button>Submit</button>
     </form>

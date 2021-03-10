@@ -31,7 +31,7 @@ export default function Products(props) {
       <Link to="/products/new">
         <button>SellSomeClothes</button>
       </Link>
-      <Card style={{ width: "18rem" }}>
+      {/* <Card style={{ width: "18rem" }}>
         <Image src="https://i.imgur.com/rwkCzqZ.jpeg/286x180" fluid />
         <Card.Body>
           <Card.Title></Card.Title>
@@ -41,7 +41,7 @@ export default function Products(props) {
           </Card.Text>
           <Button variant="primary">Go somewhere</Button>
         </Card.Body>
-      </Card>
+      </Card> */}
     </div>
   );
 }
