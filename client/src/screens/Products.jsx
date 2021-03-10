@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
+import "./Products.css";
 
 export default function Products(props) {
   const { products, handleDelete, currentUser } = props;
@@ -12,6 +14,7 @@ export default function Products(props) {
         <React.Fragment key={product.id}>
           <Link to={`/products/${product.id}`}>
             <h3>{product.name}</h3>
+            <img src={product.imgURL} alt="NoPicsForThis" />
             <h5>{product.description}</h5>
           </Link>
           {product.user_id === currentUser?.id && (
@@ -29,7 +32,7 @@ export default function Products(props) {
         <button>SellSomeClothes</button>
       </Link>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Image src="https://i.imgur.com/rwkCzqZ.jpeg/286x180" fluid />
         <Card.Body>
           <Card.Title></Card.Title>
           <Card.Text>
