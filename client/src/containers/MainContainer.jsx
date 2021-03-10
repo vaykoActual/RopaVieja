@@ -69,7 +69,7 @@ export default function MainContainer(props) {
           <ProductEdit products={products} handleUpdate={handleUpdate} />
         </Route>
         <Route path="/products/:id">
-          <ProductDetail categories={categories} />
+          <ProductDetail product={products.id} categories={categories} />
         </Route>
         <Route path="/products">
           <Products
