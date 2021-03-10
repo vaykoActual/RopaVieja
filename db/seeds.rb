@@ -21,9 +21,22 @@ puts "#{User.count} users created"
 
 puts "#{Category.count} categories created"
 
-Product.create!(name: 'Hoodie', user: @ruby, categories: [@men, @women])
-@women.products.create!(name: 'Blue Suede Shoes', user: @ruby)
-@sneakers = Product.create!(name: 'Air Jordans', user: @ruby)
+Product.create!(name: 'Hoodies', imgURL: 'https://i.imgur.com/1V4i2OG.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Jacket', imgURL: 'https://i.imgur.com/bhA6Kxo.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Jeans', imgURL: 'https://i.imgur.com/RJImaOg.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Leather Jacket', imgURL: 'https://i.imgur.com/eT0dbUI.jpg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Trench Coat', imgURL: 'https://i.imgur.com/heev3kK.jpg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Baggy Jeans', imgURL: 'https://i.imgur.com/5ivSVDY.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'T-Shirt', imgURL: 'https://i.imgur.com/ebUqsG7.jpg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Hoodies', imgURL: 'https://i.imgur.com/1V4i2OG.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Hoodies', imgURL: 'https://i.imgur.com/1V4i2OG.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Hoodies', imgURL: 'https://i.imgur.com/1V4i2OG.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Hoodies', imgURL: 'https://i.imgur.com/1V4i2OG.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'T-Shirt', imgURL: 'https://i.imgur.com/0X6aXeN.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Hoodies', imgURL: 'https://i.imgur.com/1V4i2OG.jpeg', user: @ruby, categories: [@men, @women])
+Product.create!(name: 'Hoodies', imgURL: 'https://i.imgur.com/1V4i2OG.jpeg', user: @ruby, categories: [@men, @women])
+@women.products.create!(name: 'Blue Suede Shoes', imgURL: 'https://images.neimanmarcus.com/ca/1/product_assets/N/7/1/G/N/NMN71GN_mz.jpg', user: @ruby)
+@sneakers = Product.create!(name: 'Air Jordans', imgURL: 'https://i.imgur.com/1jv5W7Q.jpeg', user: @ruby)
 @sneakers.categories.push(@men, @women, @kids)
 
 puts "#{Product.count} products created" 

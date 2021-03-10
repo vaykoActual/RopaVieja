@@ -5,7 +5,7 @@ export default function ProductEdit(props) {
   const [formData, setFormData] = useState({
     name: "",
   });
-  const { name } = formData;
+  const { name, brand, description, price, imgURL, category } = formData;
   const { products, handleUpdate } = props;
   const { id } = useParams();
 
@@ -14,6 +14,7 @@ export default function ProductEdit(props) {
       const productItem = products.find((product) => product.id === Number(id));
       setFormData({
         name: productItem.name,
+        brand: productItem.brand,
       });
     };
     if (products.length) {
@@ -41,6 +42,41 @@ export default function ProductEdit(props) {
         Name:
         <input type="text" name="name" value={name} onChange={handleChange} />
       </label>
+      <label>
+        Brand:
+        <input type="text" name="brand" value={brand} onChange={handleChange} />
+      </label>
+      <label>
+        Description:
+        <input
+          type="text"
+          name="description"
+          value={description}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Price:
+        <input type="text" name="price" value={price} onChange={handleChange} />
+      </label>
+      <label>
+        imgURL:
+        <input
+          type="text"
+          name="imgURL"
+          value={imgURL}
+          onChange={handleChange}
+        />
+      </label>
+      {/* <label>
+        Category:
+        <input
+          type="text"
+          name="category"
+          value={category}
+          onChange={handleChange}
+        />
+      </label> */}
       <br />
       <button>Submit</button>
     </form>

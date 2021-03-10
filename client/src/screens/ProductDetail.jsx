@@ -34,6 +34,7 @@ export default function ProductDetail(props) {
       {productItem?.categories.map((category) => (
         <p key={category.id}>{category.name}</p>
       ))}
+
       <form onSubmit={handleSubmit}>
         <select defaultValue="default" onChange={handleChange}>
           <option value="default" disabled>

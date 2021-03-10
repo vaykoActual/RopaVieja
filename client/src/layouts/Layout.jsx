@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../services/logo.png";
 
 export default function Layout(props) {
@@ -22,8 +22,8 @@ export default function Layout(props) {
         <hr />
         {currentUser && (
           <>
-            <Link to="/products">Products</Link>
-            <Link to="/categories">Categories</Link>
+            <NavLink to="/products">Products</NavLink>
+            <NavLink to="/categories">Categories</NavLink>
             <hr />
           </>
         )}
