@@ -6,6 +6,7 @@ export default function ProductCreate(props) {
     description: "",
     brand: "",
     price: "",
+    imgURL: "",
   });
   const { name, brand, price } = formData;
   const { handleCreate } = props;
