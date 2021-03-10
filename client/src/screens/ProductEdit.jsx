@@ -5,7 +5,7 @@ export default function ProductEdit(props) {
   const [formData, setFormData] = useState({
     name: "",
   });
-  const { name, brand, description, price, imgURL, category } = formData;
+  const { name, brand, description, price, imgURL } = formData;
   const { products, handleUpdate } = props;
   const { id } = useParams();
 
