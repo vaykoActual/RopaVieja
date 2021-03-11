@@ -13,10 +13,13 @@ export default function Layout(props) {
         <Link className="logo" to="/">
           <img className="logo" src={logo} alt="RopaVieja" />
         </Link>
+
         {currentUser ? (
           <>
             <p>{currentUser.username}</p>
-            <button onClick={handleLogout}>Logout</button>
+            <Button variant="contained" color="link" onClick={handleLogout}>
+              Logout
+            </Button>
           </>
         ) : (
           <Link to="/login">Login/Register</Link>
