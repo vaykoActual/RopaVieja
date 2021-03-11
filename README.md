@@ -58,8 +58,7 @@ The **RopaVieja** MVP is to complete full CRUD capability. The user will be able
 
 - Desktop View
 
-[Desktop Prototype](https://whimsical.com/ropavieja-PrrjFrfWwnvCTtL4gVKrup)
-![Screen Shot 2021-03-05 at 4 04 20 PM](https://user-images.githubusercontent.com/76179998/110173402-84d0aa00-7dcc-11eb-959a-baab2428f142.png)
+![Screen Shot 2021-03-11 at 2 53 41 PM](https://user-images.githubusercontent.com/76179998/110846360-b092da80-8279-11eb-88e1-c825bbf9ea0b.png)
 
 
 - Mobile View (In Progress)
