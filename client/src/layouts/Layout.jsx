@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../services/logo.png";
+import Button from "@material-ui/core/Button";
+// import Grid from "@material-ui/core/Grid";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
@@ -11,10 +13,13 @@ export default function Layout(props) {
         <Link className="logo" to="/">
           <img className="logo" src={logo} alt="RopaVieja" />
         </Link>
+
         {currentUser ? (
           <>
             <p>{currentUser.username}</p>
-            <button onClick={handleLogout}>Logout</button>
+            <Button variant="contained" color="link" onClick={handleLogout}>
+              Logout
+            </Button>
           </>
         ) : (
           <Link to="/login">Login/Register</Link>
@@ -22,8 +27,12 @@ export default function Layout(props) {
         <hr />
         {currentUser && (
           <>
-            <NavLink to="/products">Products</NavLink>
-            <NavLink to="/categories">Categories</NavLink>
+            <Button>
+              <NavLink to="/products">Products</NavLink>
+            </Button>
+            <Button>
+              <NavLink to="/categories">Categories</NavLink>
+            </Button>
             <hr />
           </>
         )}

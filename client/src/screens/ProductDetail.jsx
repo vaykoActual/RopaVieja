@@ -32,10 +32,11 @@ export default function ProductDetail(props) {
   return (
     <div>
       <h2>Details</h2>
+      <img src={productItem?.imgURL} alt="NoPicsForThis" />
       <h3>{productItem?.name}</h3>
       <h3>{productItem?.brand}</h3>
       <h3>{productItem?.description}</h3>
-      <h3>{productItem?.price}</h3>
+      <h3>${productItem?.price}</h3>
 
       <form onSubmit={handleSubmit}>
         <select defaultValue="default" onChange={handleChange}>
