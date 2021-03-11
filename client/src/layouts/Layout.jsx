@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../services/logo.png";
+import Button from "@material-ui/core/Button";
+// import Grid from "@material-ui/core/Grid";
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
@@ -22,8 +24,12 @@ export default function Layout(props) {
         <hr />
         {currentUser && (
           <>
-            <NavLink to="/products">Products</NavLink>
-            <NavLink to="/categories">Categories</NavLink>
+            <Button>
+              <NavLink to="/products">Products</NavLink>
+            </Button>
+            <Button>
+              <NavLink to="/categories">Categories</NavLink>
+            </Button>
             <hr />
           </>
         )}
