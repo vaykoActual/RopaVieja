@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Card, Button } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
+// import { Card, Button } from "react-bootstrap";
+// import Image from "react-bootstrap/Image";
 import "./Products.css";
 
 export default function Products(props) {
@@ -16,6 +16,7 @@ export default function Products(props) {
             <h3>{product.name}</h3>
             <img src={product.imgURL} alt="NoPicsForThis" />
             <h5>{product.description}</h5>
+            <h5>${product.price}</h5>
           </Link>
           {product.user_id === currentUser?.id && (
             <>

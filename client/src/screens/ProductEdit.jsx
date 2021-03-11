@@ -4,6 +4,10 @@ import { useParams } from "react-router-dom";
 export default function ProductEdit(props) {
   const [formData, setFormData] = useState({
     name: "",
+    brand: "",
+    description: "",
+    price: "",
+    imgURL: "",
   });
   const { name, brand, description, price, imgURL } = formData;
   const { products, handleUpdate } = props;
